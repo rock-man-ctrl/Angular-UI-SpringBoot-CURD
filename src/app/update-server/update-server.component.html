@@ -1,0 +1,40 @@
+<div class="card my-5">
+    <h1>Update Server</h1>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="user.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your name"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+        <div class="form-group">
+          <label for="email">Language</label>
+          <input type="text" [(ngModel)]="user.language" 
+            class="form-control" 
+            id="language" 
+            name="language" 
+            placeholder="Enter your language address"
+            required #language="ngModel">
+          <div [hidden]="!language.pristine" class="alert alert-danger">language is required</div>
+        </div>
+        <div class="form-group">
+          <label for="framework">Framework</label>
+          <input type="text" [(ngModel)]="user.framework" 
+            class="form-control" 
+            id="framework" 
+            name="framework" 
+            placeholder="Enter your framework"
+            required #framework="ngModel">
+          <div [hidden]="!framework.pristine" class="alert alert-danger">Framework is required</div>
+        </div>
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+  

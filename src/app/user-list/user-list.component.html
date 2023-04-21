@@ -1,0 +1,28 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Language</th>
+            <th scope="col">Framework</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users"> 
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+           <td>{{ user.language }}</td>
+            <td>{{ user.framework }}</td>
+            <td>
+              <button (click) = "updateServer(user.id)" class = "btn btn-primary"> Update</button>
+              <button (click) = "deleteServer(user.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+              </td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
